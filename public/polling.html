@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HTMX Crash Course</title>
+  </head>
+  <body
+    class="bg-blue-900 text-white min-h-screen flex items-center justify-center"
+  >
+    <div class="text-center">
+      <h1 class="text-xl mb-4">Weather In New York</h1>
+      <p class="text-5xl">
+        <span hx-get="/get-temperature" hx-trigger="every 5s">Loading...</span>
+      </p>
+    </div>
+  </body>
+</html>

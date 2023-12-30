@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HTMX Crash Course</title>
+  </head>
+  <body class="bg-gray-100">
+    <div
+      class="container mx-auto py-8 max-w-lg"
+      hx-target="this"
+      hx-swap="outerHTML"
+    >
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl text-gray-400 mb-4">PROFILE</h2>
+        <h1 class="text-2xl font-bold mb-4">John Doe</h1>
+        <p class="text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+          vestibulum vestibulum elit, ac facilisis ipsum eleifend sed. Duis
+          tincidunt augue nec neque cursus, nec aliquet purus tempor.
+        </p>
+        <button
+          hx-get="/profile/1/edit"
+          class="bg-indigo-700 text-white font-bold w-full py-2 px-4 rounded-lg mt-4 hover:bg-indigo-600"
+        >
+          Click To Edit
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

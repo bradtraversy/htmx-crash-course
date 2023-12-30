@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HTMX Crash Course</title>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto mt-8 text-center">
+      <div class="bg-white p-4 border rounded-lg max-w-lg m-auto">
+        <h1 class="text-2xl font-bold mb-4">Temperature Converter</h1>
+        <form
+          hx-trigger="submit"
+          hx-post="/convert"
+          hx-target="#result"
+          hx-indicator="#loading"
+        >
+          <label for="fahrenheit">Fahrenheit:</label>
+          <input
+            type="number"
+            id="fahrenheit"
+            name="fahrenheit"
+            class="border p-2 rounded"
+            value="32"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Convert
+          </button>
+
+          <div id="result" class="mt-6 text-xl"></div>
+          <span class="htmx-indicator" id="loading">
+            <img src="img/loader.gif" alt="Loading..." class="m-auto h-10" />
+          </span>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HTMX Crash Course</title>
+  </head>
+  <body class="bg-blue-900">
+    <div class="container mx-auto py-8 max-w-lg">
+      <span class="htmx-indicator" id="loading">
+        <img src="img/loader.gif" alt="Loading..." class="m-auto h-10" />
+      </span>
+      <div
+        class="bg-gray-900 text-white p-4 border border-gray-600 rounded-lg max-w-lg m-auto"
+      >
+        <h3 class="text-2xl mb-3 text-center">Search Contacts</h3>
+        <input
+          class="border border-gray-600 bg-gray-800 p-2 rounded-lg w-full mb-5"
+          type="search"
+          name="search"
+          placeholder="Begin Typing To Search Users..."
+          hx-post="/search/api"
+          hx-trigger="input changed delay:500ms, search"
+          hx-target="#search-results"
+          hx-indicator="#loading"
+        />
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-800 text-white">
+            <tr>
+              <th
+                scope="col"
+                class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
+              >
+                Name
+              </th>
+              <th
+                scope="col"
+                class="px-6 py-3 text-center text-xs font-medium uppercase tracking-wider"
+              >
+                Email
+              </th>
+            </tr>
+          </thead>
+          <tbody id="search-results" class="divide-y divide-gray-600">
+            <!-- Your search results go here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

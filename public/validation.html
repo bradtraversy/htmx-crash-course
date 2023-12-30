@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HTMX Crash Course</title>
+  </head>
+  <body class="bg-blue-500">
+    <form class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
+      <h1 class="text-2xl font-bold mb-4 text-center">Contact Us</h1>
+      <div class="mb-4" hx-target="this" hx-swap="outerHTML">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
+          >Email Address</label
+        >
+        <input
+          name="email"
+          hx-post="/contact/email"
+          class="border rounded-lg py-2 px-3 w-full focus:outline-none focus:border-blue-500"
+          type="email"
+          id="email"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="firstName"
+          >First Name</label
+        >
+        <input
+          type="text"
+          name="firstName"
+          class="border rounded-lg py-2 px-3 w-full focus:outline-none focus:border-blue-500"
+          id="firstName"
+          required
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="lastName"
+          >Last Name</label
+        >
+        <input
+          type="text"
+          name="lastName"
+          class="border rounded-lg py-2 px-3 w-full focus:outline-none focus:border-blue-500"
+          id="lastName"
+          required
+        />
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
+5 4
