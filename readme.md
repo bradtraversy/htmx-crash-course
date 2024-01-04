@@ -1,6 +1,6 @@
 # HTMX Crash Course
 
-This is the code from my HTMX crash course on YouTube. It uses a Node/Express server. All of the HTMX is in the `/public` .html files.
+This is the code from my HTMX [crash course on YouTube](https://www.youtube.com/watch?v=0UvA7zvwsmg). It uses a Node/Express server. All of the HTMX is in the `/public` .html files.
 
 There are several examples:
 
